@@ -23,17 +23,16 @@ def make_document(doc):
         # print('attempting read')
         port = '/dev/tty.usbmodem14101'
         connection = serial.Serial(port, 9600, timeout=1)
-        connection.write(b'a\r')
-        # temperature = float(connection.read(20)[3:-2])
-        temps = connection.read(20).decode("utf-8")[3:-2].split(',')
-        print(temps)
-        # print(temperature)
+        connection.write(b'5\r')
+        temp0 = connection.read(20).decode("utf-8")[3:-2]
+        connection.write(b'6\r')
+        temp1 = connection.read(20).decode("utf-8")[3:-2]
         connection.close()
 
 
         temp_source.stream({'time':[sample_time],
-                            'temp0':[float(temps[0])],
-                            'temp1':[float(temps[1])]})
+                            'temp0':[float(temp0)],
+                            'temp1':[float(temp1)]})
 
 
 
