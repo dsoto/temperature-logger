@@ -50,10 +50,10 @@ def make_document(doc):
     temp_fig = figure(title='Temperature', x_axis_type='datetime')
 
     # generate trend lines and data points
-    temp_fig.line(source=temp_source, x='time', y='temp0')
-    temp_fig.line(source=temp_source, x='time', y='temp1')
-    temp_fig.circle(source=temp_source, x='time', y='temp0')
-    temp_fig.circle(source=temp_source, x='time', y='temp1')
+    temp_fig.line(source=temp_source, x='time', y='temp0', legend='CS 5', color='blue')
+    temp_fig.line(source=temp_source, x='time', y='temp1', legend='CS 6', color='green')
+    temp_fig.circle(source=temp_source, x='time', y='temp0', color='blue')
+    temp_fig.circle(source=temp_source, x='time', y='temp1', color='green')
 
 
     plots = temp_fig
