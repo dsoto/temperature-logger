@@ -23,13 +23,8 @@ sensor2 = adafruit_max31865.MAX31865(spi, cs2, rtd_nominal=100, ref_resistor=430
 
 # Main loop to print the temperature every second.
 while True:
+    # try sys.stdin.read(1) to read a character
     if input()=='5':
-        # temp1 = sensor1.temperature
-        # print('Temperature: {0:0.3f}C'.format(temp))
-        # print('{0:0.3f},{1:0.3f}'.format(temp1, temp2))
         print('{0:0.3f}'.format(sensor1.temperature))
     if input()=='6':
-        # temp2 = sensor2.temperature
-        # print('Temperature: {0:0.3f}C'.format(temp))
-        # print('{0:0.3f},{1:0.3f}'.format(temp1, temp2))
         print('{0:0.3f}'.format(sensor2.temperature))
